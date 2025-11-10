@@ -43,16 +43,54 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       display: block;
       margin-bottom: 2rem;
-      position: relative;
     }
 
-    /* RSVP button overlay using percentages for responsive positioning */
+    /* RSVP button with absolute positioning relative to the image */
     .rsvp-button {
       position: absolute;
-      top: 65%; /* vertical position lower on the image */
-      left: 50%; /* horizontal center */
-      transform: translate(-50%, -50%);
-      background-color: #ffd8a6; /* button color */
-      color: #111; /* text color for contrast */
+      background-color: #ffd8a6;
+      color: #111;
       padding: 1rem 2rem;
-      font-s
+      font-size: 1.2rem;
+      font-family: 'New Ion Script', cursive;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    .rsvp-button:hover {
+      background-color: #e6c499;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #4b6cb7;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Wrapper to position RSVP button relative to the image -->
+    <div style="position: relative; width: 100%;">
+      <img src="Heavan & Austin's Wedding Invitation (1).png" alt="Page 1 Invite" class="page-image">
+      <!-- RSVP button positioned exactly on the image -->
+      <a href="https://www.zola.com/wedding/heavanandaustin" target="_blank" class="rsvp-button"
+         style="top: 600px; left: 50%; transform: translateX(-50%); position: absolute;">RSVP</a>
+    </div>
+
+    <footer>
+      We can't wait to celebrate with you!
+    </footer>
+  </div>
+</body>
+</html>
