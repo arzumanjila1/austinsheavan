@@ -44,17 +44,18 @@
 
     .page-image {
       width: 100%;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       display: block;
       margin-bottom: 2rem;
     }
 
-    /* RSVP button overlay */
+    /* RSVP button overlay using percentage positioning relative to image */
     .rsvp-button {
       position: absolute;
-      top: 65%; /* vertical position relative to image */
-      left: 50%;
+      top: 80%; /* vertical position relative to image height */
+      left: 50%; /* horizontal center */
       transform: translate(-50%, -50%);
       background-color: #ffd8a6;
       color: #111;
@@ -85,12 +86,20 @@
       text-decoration: underline;
     }
 
-    /* Responsive adjustments */
+    /* Make RSVP button scale proportionally on smaller screens */
+    @media (max-width: 800px) {
+      .rsvp-button {
+        top: 65%; /* keeps relative alignment */
+        font-size: 1.1rem;
+        padding: 0.9rem 1.8rem;
+      }
+    }
+
     @media (max-width: 500px) {
       .rsvp-button {
+        top: 66%; /* slightly lower for narrow screens */
         font-size: 1rem;
         padding: 0.8rem 1.5rem;
-        top: 70%; /* scales down on mobile */
       }
     }
   </style>
