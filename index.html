@@ -34,12 +34,6 @@
     .container {
       max-width: 800px;
       width: 100%;
-      position: relative;
-    }
-
-    .page-wrapper {
-      position: relative;
-      width: 100%;
     }
 
     .page-image {
@@ -49,29 +43,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       display: block;
       margin-bottom: 2rem;
-    }
-
-    /* RSVP button overlay using percentage positioning relative to image */
-    .rsvp-button {
-      position: absolute;
-      top: 80%; /* vertical position relative to image height */
-      left: 50%; /* horizontal center */
-      transform: translate(-50%, -50%);
-      background-color: #ffd8a6;
-      color: #111;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      font-family: 'New Ion Script', cursive;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      text-decoration: none;
-      z-index: 10;
-      transition: background-color 0.3s ease;
-    }
-
-    .rsvp-button:hover {
-      background-color: #e6c499;
     }
 
     footer {
@@ -86,36 +57,53 @@
       text-decoration: underline;
     }
 
-    /* Make RSVP button scale proportionally on smaller screens */
+    /* RSVP button below footer, centered */
+    .rsvp-button {
+      display: block;
+      margin: 1rem auto 0 auto; /* top spacing, centered horizontally */
+      background-color: #ffd8a6;
+      color: #111;
+      padding: 1.2rem 2.2rem;
+      font-size: 1.3rem;
+      font-family: 'New Ion Script', cursive;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .rsvp-button:hover {
+      background-color: #e6c499;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 800px) {
       .rsvp-button {
-        top: 65%; /* keeps relative alignment */
-        font-size: 1.1rem;
-        padding: 0.9rem 1.8rem;
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
       }
     }
 
     @media (max-width: 500px) {
       .rsvp-button {
-        top: 66%; /* slightly lower for narrow screens */
-        font-size: 1rem;
-        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        padding: 0.9rem 1.8rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="page-wrapper">
-      <!-- Wedding Invitation Image -->
-      <img src="heavan_austin_invite1.png" alt="Heavan & Austin's Wedding Invitation" class="page-image">
-
-      <!-- RSVP Button overlay -->
-      <a href="https://www.zola.com/wedding/heavanandaustin" target="_blank" class="rsvp-button">RSVP</a>
-    </div>
+    <!-- Wedding Invitation Image -->
+    <img src="heavan_austin_invite1.png" alt="Heavan & Austin's Wedding Invitation" class="page-image">
 
     <footer>
       We can't wait to celebrate with you!
+      <br>
+      <!-- RSVP Button below footer text -->
+      <a href="https://www.zola.com/wedding/heavanandaustin" target="_blank" class="rsvp-button">RSVP</a>
     </footer>
   </div>
 </body>
